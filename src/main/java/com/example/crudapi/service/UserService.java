@@ -6,9 +6,9 @@ import com.example.crudapi.model.User;
 
 public interface UserService {
     List<User> getAllUsers();
-    // List<User> getActiveUsers();
+    List<User> getActiveUsers();
     User getUserById(Long id);
-    // User getUserByEmail(String Email);
+    User getUserByEmail(String Email);
     User creatUser(User user);
     User updateUser(Long id, User userDetails);
     void deleteUser(Long id);

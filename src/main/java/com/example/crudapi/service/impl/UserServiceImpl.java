@@ -25,10 +25,10 @@ public class UserServiceImpl implements UserService {
         return userRepository.findAll();
     }
 
-    // @Override
-    // public List<User> getActiveUsers() {
-    //     return userRepository.findActiveUsers();
-    // }
+    @Override
+    public List<User> getActiveUsers() {
+        return userRepository.findByActiveTrue();
+    }
 
     @Override
     public User getUserById(Long id) {
@@ -36,11 +36,11 @@ public class UserServiceImpl implements UserService {
             .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + id));
     }
 
-    // @Override
-    // public User getUserByEmail(String email) {
-    //     return userRepository.findByEmail(email)
-    //         .orElseThrow(() -> new ResourceNotFoundException("User not found with email: " + email));
-    // }
+    @Override
+    public User getUserByEmail(String email) {
+        return userRepository.findByEmail(email)
+            .orElseThrow(() -> new ResourceNotFoundException("User not found with email: " + email));
+    }
 
     @Override
     public User creatUser(User user) {

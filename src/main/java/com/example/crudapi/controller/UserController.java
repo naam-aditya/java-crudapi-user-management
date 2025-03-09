@@ -36,15 +36,15 @@ public class UserController {
         return ResponseEntity.ok(userService.getAllUsers());
     }
 
-    // @GetMapping("/active")
-    // public ResponseEntity<List<User>> getActiveUsers() {
-    //     return ResponseEntity.ok(userService.getActiveUsers());
-    // }
+    @GetMapping("/active")
+    public ResponseEntity<List<User>> getActiveUsers() {
+        return ResponseEntity.ok(userService.getActiveUsers());
+    }
 
-    // @GetMapping("/email/{email}")
-    // public ResponseEntity<User> getUserByEmail(@PathVariable String email) {
-    //     return ResponseEntity.ok(userService.getUserByEmail(email));
-    // }
+    @GetMapping("/email/{email}")
+    public ResponseEntity<User> getUserByEmail(@PathVariable String email) {
+        return ResponseEntity.ok(userService.getUserByEmail(email));
+    }
 
     @PostMapping
     public ResponseEntity<User> createUser(@Valid @RequestBody User user) {
